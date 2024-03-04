@@ -10,8 +10,6 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 
 // Function to add an item to the basket
 function addToBasket(itemId, itemName, itemPrice) {
-  console.log('Adding item to basket:', itemId, itemName, itemPrice);
-
   const basketItems = document.querySelector('.basket-items');
 
   // Check if item already exists in the basket
@@ -26,9 +24,8 @@ function addToBasket(itemId, itemName, itemPrice) {
     newItem.classList.add('basket-item');
     newItem.id = `basket-item-${itemId}`;
     newItem.innerHTML = `
-      <img src="images/${itemName.toLowerCase()}.jpg" alt="${itemName}">
       <span class="item-name">${itemName}</span>
-      <span class="item-price">${itemPrice.toFixed(2)}</span>
+      <span class="item-price">${itemPrice}</span>
       <span class="item-quantity">1</span>
     `;
     basketItems.appendChild(newItem);
@@ -37,6 +34,7 @@ function addToBasket(itemId, itemName, itemPrice) {
   // Update total items and total price
   updateBasketTotal();
 }
+
 
 // Function to update total items and total price
 function updateBasketTotal() {
