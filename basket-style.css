@@ -33,11 +33,7 @@ h1 {
 .basket-item:hover {
   transform: scale(1.1); /* Scale up the item on hover for a visual effect */
 }
-.basket-item img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
+
 
 .basket-item-name {
   flex-grow: 1;
