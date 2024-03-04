@@ -107,7 +107,16 @@
       </ul>
     </div>
   </div>
-  
+ <div id="basket" class="basket">
+    <h2>Your Basket</h2>
+    <div class="basket-items"></div>
+    <div class="basket-total">
+      <span>Total Items: <span id="total-items">0</span></span>
+      <span>Total Price: £<span id="total-price">0.00</span></span>
+    </div>
+    <button onclick="clearBasket()">Clear Basket</button>
+  </div>
+
   <script src="script.js"></script> <!-- Make sure this path is correct -->
   <script src="basket-script.js"></script>
 </body>
