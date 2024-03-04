@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="style.css"> <!-- Make sure this path is correct -->
 </head>
 <body>
- 
+  <button id="cart-btn" onclick="toggleCart()">
+    <img src="images/basket.png" alt="cart">
+    <span id="total-counter">0</span>
+  </button>
   <div class="menu-container">
     <h1>School Tuck Shop Menu</h1>
     <div class="category">
@@ -84,6 +87,7 @@
           <span class="item-price">0.50</span>
           <button class="add-to-cart" data-id="00010">Add to Cart +</button>
         </li>
+        <!-- Add more crisps items here -->
       </ul>
     </div>
     <div class="category">
@@ -101,6 +105,7 @@
           <span class="item-price">0.50</span>
           <button class="add-to-cart" data-id="00012">Add to Cart +</button>
         </li>
+        <!-- Add more other items here -->
       </ul>
     </div>
   </div>
@@ -118,6 +123,7 @@
   <script src="basket-script.js"></script>
 </body>
 </html>
+
 
 
 
