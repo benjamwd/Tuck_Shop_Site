@@ -24,9 +24,14 @@ function addToBasket(itemId, itemName, itemPrice) {
     newItem.classList.add('basket-item');
     newItem.id = `basket-item-${itemId}`;
     newItem.innerHTML = `
-      <span class="item-name">${itemName}</span>
-      <span class="item-price">${itemPrice}</span>
-      <span class="item-quantity">1</span>
+      <div class="item-details">
+        <span class="item-name">${itemName}</span>
+        <span class="item-price">${itemPrice}</span>
+        <span class="item-quantity">1</span>
+      </div>
+      <div class="item-image">
+        <img src="images/${itemName.toLowerCase()}.jpg" alt="${itemName}">
+      </div>
     `;
     basketItems.appendChild(newItem);
   }
@@ -34,6 +39,7 @@ function addToBasket(itemId, itemName, itemPrice) {
   // Update total items and total price
   updateBasketTotal();
 }
+
 
 
 // Function to update total items and total price
