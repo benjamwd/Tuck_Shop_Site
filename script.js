@@ -38,7 +38,6 @@ function updateBasketTotal() {
   document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 }
 
-// Function to add an item to the basket
 function addToBasket(itemId, itemName, itemPrice) {
   const basketItems = document.querySelector('.basket-items');
 
@@ -54,7 +53,6 @@ function addToBasket(itemId, itemName, itemPrice) {
     newItem.classList.add('basket-item');
     newItem.id = `basket-item-${itemId}`;
     newItem.innerHTML = `
-      <img src="images/${itemName.toLowerCase()}.jpg" alt="${itemName}">
       <span class="item-name">${itemName}</span>
       <span class="item-price">${itemPrice}</span>
       <span class="item-quantity">1</span>
@@ -65,6 +63,7 @@ function addToBasket(itemId, itemName, itemPrice) {
   // Update total items and total price
   updateBasketTotal();
 }
+
 
 // Function to clear the basket
 function clearBasket() {
