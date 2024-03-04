@@ -27,8 +27,12 @@ h1 {
   align-items: center;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
+  transition: transform 0.3s ease-in-out; /* Add transition for smoother animation */
 }
 
+.basket-item:hover {
+  transform: scale(1.1); /* Scale up the item on hover for a visual effect */
+}
 .basket-item img {
   width: 50px;
   height: 50px;
