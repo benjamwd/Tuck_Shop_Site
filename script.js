@@ -42,7 +42,7 @@ items.forEach(item => {
 
 
 
-});
+
 
 function handleItemClick(itemId, action) {
     const stock = items.find(item => item.id === itemId).stock;
