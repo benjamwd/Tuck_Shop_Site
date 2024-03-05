@@ -14,7 +14,7 @@ $response = $checkoutsService->create(
     'CO746453',     // Specify a reference or identifier for the checkout
     'docuser@sumup.com',    // Specify the email associated with the payment
     'Sample one-time payment',  // Specify a description for the payment
-    'https://yourwebsite.com/checkout_success'  // Specify the URL where users should be redirected after payment
+    'success.html'  // Specify the URL where users should be redirected after payment
 );
 
 // Extract the checkout ID from the response body
