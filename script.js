@@ -27,10 +27,14 @@ const items = [
 
 items.forEach(item => {
     count[item.id] = 0;
-    document.getElementById(`item-btn${item.id}`).addEventListener("click", () => handleItemClick(item.id, 'add'));
-    document.getElementById(`item-btn-${item.id}`).addEventListener("click", () => handleItemClick(item.id, 'remove'));
-    document.getElementById(`item-btn-C${item.id}`).addEventListener("click", () => handleItemClick(item.id, 'clear'));
- // Add touch event listeners for mobile devices
+    const addButton = document.getElementById(`item-btn${item.id}`);
+    const removeButton = document.getElementById(`item-btn-${item.id}`);
+    const clearButton = document.getElementById(`item-btn-C${item.id}`);
+    addButton.addEventListener("click", () => handleItemClick(item.id, 'add'));
+    removeButton.addEventListener("click", () => handleItemClick(item.id, 'remove'));
+    clearButton.addEventListener("click", () => handleItemClick(item.id, 'clear'));
+
+    // Add touch event listeners for mobile devices
     addButton.addEventListener("touchstart", () => handleItemClick(item.id, 'add'));
     removeButton.addEventListener("touchstart", () => handleItemClick(item.id, 'remove'));
     clearButton.addEventListener("touchstart", () => handleItemClick(item.id, 'clear'));
