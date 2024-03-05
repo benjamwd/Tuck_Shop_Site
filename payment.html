@@ -18,8 +18,8 @@
     SumUpCard.mount({
       // Specify the id of the placeholder div
       id: 'sumup-card',
-      // Specify the checkout ID obtained from your backend
-      checkoutId: '2ceffb63-cbbe-4227-87cf-0409dd191a98',
+      // Specify the checkout ID obtained from PHP
+      checkoutId: '<?php echo $checkoutId; ?>',
       // Specify the callback function to handle response
       onResponse: function (type, body) {
         // Log the type and body of the response to the console
@@ -30,3 +30,4 @@
   </script>
 </body>
 </html>
+
