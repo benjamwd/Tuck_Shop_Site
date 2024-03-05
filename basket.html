@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .product-info {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700px;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #45a049;
+            font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+        }
+
+        .total-price-container {
+            margin-top: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Checkout</h2>
+        <div id="product-info-container">
+        </div>
+        <div class="total-price-container">
+        </div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const productInfoContainer = document.getElementById('product-info-container');
+            const totalPriceContainer = document.querySelector('.total-price-container');
+    
+            const productInfo = localStorage.getItem('productInfo');
+    
+            if (productInfo) {
+                productInfoContainer.innerHTML = productInfo;
+            } else {
+                productInfoContainer.innerHTML = "<p>No items in the basket</p>";
+            }
+    
+            let totalPrice = 0;
+            document.querySelectorAll('.product-info').forEach(info => {
+                const quantity = parseInt(info.querySelector('p:nth-child(4)').textContent.split(':')[1].trim());
+                const subtotal = parseFloat(info.querySelector('p:nth-child(5)').textContent.split('£')[1]);
+                totalPrice += subtotal;
+            });
+
+            totalPriceContainer.innerHTML = `<p>Total Price: £${totalPrice.toFixed(2)}</p>`;
+        });
+    </script>
+    
+</body>
+</html>
