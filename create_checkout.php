@@ -12,7 +12,7 @@ $response = $checkoutsService->create(
     10,             // Specify the amount of the payment
     'EUR',          // Specify the currency (in this case, Euro)
     'CO746453',     // Specify a reference or identifier for the checkout
-    'docuser@sumup.com',    // Specify the email associated with the payment
+    'benjam.spivak@gmail.com',    // Specify the email associated with the payment
     'Sample one-time payment',  // Specify a description for the payment
     'success.html'  // Specify the URL where users should be redirected after payment
 );
