@@ -1,10 +1,6 @@
-const currentHour = new Date().getHours();
-const startHour = 10; // 10 AM
-const endHour = 13;   // 1 PM
 
-if (currentHour >= startHour && currentHour < endHour) {
-    window.location.href = "hours.html";
-}
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const categoryTitles = document.querySelectorAll('.category-title');
