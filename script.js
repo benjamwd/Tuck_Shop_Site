@@ -1,7 +1,3 @@
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const categoryTitles = document.querySelectorAll('.category-title');
     categoryTitles.forEach(title => {
