@@ -1,3 +1,7 @@
+const currentHour = new Date().getHours();
+const startHour = 10; // 10 AM
+const endHour = 13;   // 1 PM
+
 document.addEventListener("DOMContentLoaded", function() {
     const categoryTitles = document.querySelectorAll('.category-title');
     categoryTitles.forEach(title => {
