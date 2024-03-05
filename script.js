@@ -22,7 +22,7 @@ const items = [
     {id: "00010", name: "salted Popcorn", price: 0.50, stock: 10},
     {id: "00011", name: "nature valley", price: 0.50, stock: 10},
     {id: "00012", name: "Yoyo bear", price: 0.50, stock: 10},
-    {id: "00013", name: "Pizza", price: 2, stock: 10},
+
 ];
 
 items.forEach(item => {
