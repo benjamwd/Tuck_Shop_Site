@@ -11,6 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the button element
+  var checkoutBtn = document.querySelector('.checkout-btn');
+
+  // Add click event listener to the button
+  checkoutBtn.addEventListener('click', function() {
+    // Redirect to the new page
+    window.location.href = 'payment.html';
+  });
+});
+
 let count = {};
 
 // db for products
