@@ -1,65 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Payment Checkout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SumUp Card Widget</title>
 </head>
 <body>
-    <h1>Create Payment Checkout</h1>
-    <form id="checkoutForm">
-        <!-- Input fields for required and optional parameters -->
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" required><br><br>
-        
-        <label for="checkout_reference">Checkout Reference:</label>
-        <input type="text" id="checkout_reference" name="checkout_reference" required><br><br>
-        
-        <label for="currency">Currency:</label>
-        <input type="text" id="currency" name="currency" required><br><br>
-        
-        <label for="merchant_code">Merchant Code:</label>
-        <input type="text" id="merchant_code" name="merchant_code" required><br><br>
-        
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description"><br><br>
-        
-        <label for="redirect_url">Redirect URL:</label>
-        <input type="text" id="redirect_url" name="redirect_url"><br><br>
-        
-        <label for="return_url">Return URL:</label>
-        <input type="text" id="return_url" name="return_url"><br><br>
-        
-        <button type="submit">Create Checkout</button>
-    </form>
+  <!-- Placeholder div for SumUp card widget -->
+  <div id="sumup-card"></div>
 
-    <!-- Payment widget placeholder -->
-    <div id="sumup-card"></div>
-    
-    <!-- SumUp SDK script -->
-    <script type="text/javascript" src="https://gateway.sumup.com/gateway/ecom/card/v2/sdk.js"></script>
+  <!-- SumUp card widget SDK script -->
+  <script src="https://gateway.sumup.com/gateway/ecom/card/v2/sdk.js"></script>
 
-    <!-- JavaScript to handle form submission and mount SumUp card widget -->
-    <script type="text/javascript">
-        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            // Create a checkout and obtain the checkout ID
-            // Replace this section with your backend logic to create the checkout
-            // For demonstration, we'll use dummy values here
-            var checkoutId = '2ceffb63-cbbe-4227-87cf-0409dd191a98'; // Replace with actual checkout ID
-            
-            // Mount SumUp card widget with the obtained checkout ID
-            SumUpCard.mount({
-                id: 'sumup-card',
-                checkoutId: checkoutId,
-                onResponse: function (type, body) {
-                    console.log('Type', type);
-                    console.log('Body', body);
-                },
-            });
-        });
-    </script>
+  <!-- JavaScript code to mount the SumUp card widget -->
+  <script type="text/javascript">
+    // Mount the SumUp card widget
+    SumUpCard.mount({
+      // Specify the id of the placeholder div
+      id: 'sumup-card',
+      // Specify the checkout ID obtained from your backend
+      checkoutId: '2ceffb63-cbbe-4227-87cf-0409dd191a98',
+      // Specify the callback function to handle response
+      onResponse: function (type, body) {
+        // Log the type and body of the response to the console
+        console.log('Type', type);
+        console.log('Body', body);
+      },
+    });
+  </script>
 </body>
 </html>
-
