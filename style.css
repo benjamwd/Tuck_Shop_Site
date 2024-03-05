@@ -1,7 +1,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Professional font stack */
   background-color: #0038b8; /* Dark background */
-  color: #ffffff; /* Text color */
+  color: #000000; /* Text color */
   margin: 0;
   padding: 0;
 }
@@ -36,7 +36,7 @@ h1 {
 .category-title {
   cursor: pointer;
   font-size: 1.5em; /* Larger font size */
-  border-bottom: 2px solid #ffffff; /* White border */
+  border-bottom: 2px solid ##000000; /* White border */
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -91,7 +91,7 @@ button{
   color: white;
   padding: 6px;
   border-radius: 10px;
-  background-color: ##0038b8;
+  background-color: #0038b8;
   border: white solid 2px;
   animation: fadeIn 1s ease; 
 }
