@@ -45,8 +45,8 @@ const items = [
 // Initialize the API client library and set up sign-in state listeners
 function initClient() {
     gapi.client.init({
-        apiKey: 'YOUR_API_KEY',
-        clientId: 'YOUR_CLIENT_ID',
+        apiKey: 'AIzaSyDRIrmOLPWdURDH4DB3yuX6IhhZznqA4eg',
+        clientId: '1049448105594-tdkb7mnq1eo3sbrrgaasps9nr4gsoqgg.apps.googleusercontent.com',
         discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
         scope: 'https://www.googleapis.com/auth/spreadsheets'
     }).then(function () {
@@ -98,7 +98,7 @@ function updateTotal() {
 
 // Function to send data to a separate sheet in Google Sheets
 function sendDataToSheet() {
-    const spreadsheetId = 'YOUR_SPREADSHEET_ID'; // Replace with your Google Sheets spreadsheet ID
+    const spreadsheetId = '1RXIju8Q0_WSgYnhE7YQPxEvteyfjxkhQlvlcxEjTX8w'; // Replace with your Google Sheets spreadsheet ID
     const range = 'stock_values!A1:D'; // Specify the range where you want to write the data
 
     // Prepare the data to be written to the sheet
