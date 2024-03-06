@@ -9,17 +9,20 @@ document.addEventListener("DOMContentLoaded", function() {
             this.nextElementSibling.classList.toggle('show');
         });
     });
+
+    // Load the Google API client library
+    gapi.load('client', initClient);
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Get the button element
-  var checkoutBtn = document.querySelector('.checkout-btn');
+    // Get the button element
+    var checkoutBtn = document.querySelector('.checkout-btn');
 
-  // Add click event listener to the button
-  checkoutBtn.addEventListener('click', function() {
-    // Redirect to the new page
-    window.location.href = 'payment.html';
-  });
+    // Add click event listener to the button
+    checkoutBtn.addEventListener('click', function() {
+        // Redirect to the new page
+        window.location.href = 'payment.html';
+    });
 });
 
 let count = {};
@@ -39,59 +42,17 @@ const items = [
     {id: "00012", name: "Yoyo bear", price: 0.50, stock: 10},
 ];
 
-// Load the Google API client library
-gapi.load('client', initClient);
-
 // Initialize the API client library and set up sign-in state listeners
 function initClient() {
-  gapi.client.init({
-    apiKey: 'AIzaSyDRIrmOLPWdURDH4DB3yuX6IhhZznqA4eg',
-    clientId: '1049448105594-tdkb7mnq1eo3sbrrgaasps9nr4gsoqgg.apps.googleusercontent.com',
-    discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-    scope: 'https://www.googleapis.com/auth/spreadsheets'
-  }).then(function () {
-    // Google Sheets API is ready for use
- // Function to send data to a separate sheet in Google Sheets
-function sendDataToSheet() {
-  const spreadsheetId = '1RXIju8Q0_WSgYnhE7YQPxEvteyfjxkhQlvlcxEjTX8w'; // Replace with your Google Sheets spreadsheet ID
-  const range = 'stock_values!A1:D'; // Specify the range where you want to write the data
-
-  // Prepare the data to be written to the sheet
-  const values = items.map(item => [item.id, item.name, item.price, item.stock]);
-
-  // Make request to Google Sheets API to update the spreadsheet
-  gapi.client.sheets.spreadsheets.values.update({
-    spreadsheetId: spreadsheetId,
-    range: range,
-    valueInputOption: 'RAW',
-    values: values
-  }).then(function(response) {
-    console.log('Data sent to Google Sheets:', response);
-  }, function(error) {
-    console.error('Error sending data to Google Sheets:', error);
-  });
-}
-
-
-// Function to send data to a separate sheet in Google Sheets
-function sendDataToSheet() {
-  const spreadsheetId = '1RXIju8Q0_WSgYnhE7YQPxEvteyfjxkhQlvlcxEjTX8w'; // Replace with your Google Sheets spreadsheet ID
-  const range = 'stock_values!A1'; // Specify the range where you want to write the data
-
-  // Prepare the data to be written to the sheet
-  const values = items.map(item => [item.id, item.name, item.price, item.stock]);
-
-  // Make request to Google Sheets API to update the spreadsheet
-  gapi.client.sheets.spreadsheets.values.update({
-    spreadsheetId: spreadsheetId,
-    range: range,
-    valueInputOption: 'RAW',
-    values: values
-  }).then(function(response) {
-    console.log('Data sent to Google Sheets:', response);
-  }, function(error) {
-    console.error('Error sending data to Google Sheets:', error);
-  });
+    gapi.client.init({
+        apiKey: 'YOUR_API_KEY',
+        clientId: 'YOUR_CLIENT_ID',
+        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+        scope: 'https://www.googleapis.com/auth/spreadsheets'
+    }).then(function () {
+        // Google Sheets API is ready for use
+        sendDataToSheet();
+    });
 }
 
 items.forEach(item => {
@@ -135,6 +96,27 @@ function updateTotal() {
     document.getElementById('total-counter').innerHTML = total;
 }
 
+// Function to send data to a separate sheet in Google Sheets
+function sendDataToSheet() {
+    const spreadsheetId = 'YOUR_SPREADSHEET_ID'; // Replace with your Google Sheets spreadsheet ID
+    const range = 'stock_values!A1:D'; // Specify the range where you want to write the data
+
+    // Prepare the data to be written to the sheet
+    const values = items.map(item => [item.id, item.name, item.price, item.stock]);
+
+    // Make request to Google Sheets API to update the spreadsheet
+    gapi.client.sheets.spreadsheets.values.update({
+        spreadsheetId: spreadsheetId,
+        range: range,
+        valueInputOption: 'RAW',
+        values: values
+    }).then(function(response) {
+        console.log('Data sent to Google Sheets:', response);
+    }, function(error) {
+        console.error('Error sending data to Google Sheets:', error);
+    });
+}
+
 // Your existing code for toggling the cart
 function toggleCart() {
     let productInfo = '';
@@ -155,7 +137,6 @@ function toggleCart() {
     window.location.href = "basket.html";
 }
 
- 
 
  
 
