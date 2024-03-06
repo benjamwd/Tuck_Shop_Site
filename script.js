@@ -51,9 +51,27 @@ function initClient() {
     scope: 'https://www.googleapis.com/auth/spreadsheets'
   }).then(function () {
     // Google Sheets API is ready for use
-    sendDataToSheet();
+ // Function to send data to a separate sheet in Google Sheets
+function sendDataToSheet() {
+  const spreadsheetId = '1RXIju8Q0_WSgYnhE7YQPxEvteyfjxkhQlvlcxEjTX8w'; // Replace with your Google Sheets spreadsheet ID
+  const range = 'stock_values!A1:D'; // Specify the range where you want to write the data
+
+  // Prepare the data to be written to the sheet
+  const values = items.map(item => [item.id, item.name, item.price, item.stock]);
+
+  // Make request to Google Sheets API to update the spreadsheet
+  gapi.client.sheets.spreadsheets.values.update({
+    spreadsheetId: spreadsheetId,
+    range: range,
+    valueInputOption: 'RAW',
+    values: values
+  }).then(function(response) {
+    console.log('Data sent to Google Sheets:', response);
+  }, function(error) {
+    console.error('Error sending data to Google Sheets:', error);
   });
 }
+
 
 // Function to send data to a separate sheet in Google Sheets
 function sendDataToSheet() {
