@@ -58,7 +58,7 @@ function initClient() {
 // Function to send data to a separate sheet in Google Sheets
 function sendDataToSheet() {
   const spreadsheetId = '1RXIju8Q0_WSgYnhE7YQPxEvteyfjxkhQlvlcxEjTX8w'; // Replace with your Google Sheets spreadsheet ID
-  const range = 'stock values!A1'; // Specify the range where you want to write the data
+  const range = 'stock_values!A1'; // Specify the range where you want to write the data
 
   // Prepare the data to be written to the sheet
   const values = items.map(item => [item.id, item.name, item.price, item.stock]);
