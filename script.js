@@ -23,8 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let count = {};
-
-// db for products
 const items = [
     {id: "00000", name: "kitkat", price: 0.50, stock: 10},
     {id: "00001", name: "Freddo", price: 0.50, stock: 10},
@@ -39,7 +37,44 @@ const items = [
     {id: "00010", name: "salted Popcorn", price: 0.50, stock: 10},
     {id: "00011", name: "nature valley", price: 0.50, stock: 10},
     {id: "00012", name: "Yoyo bear", price: 0.50, stock: 10},
-]
+];
+
+// Load the Google API client library
+gapi.load('client', initClient);
+
+// Initialize the API client library and set up sign-in state listeners
+function initClient() {
+  gapi.client.init({
+    apiKey: 'AIzaSyDRIrmOLPWdURDH4DB3yuX6IhhZznqA4eg',
+    clientId: '1049448105594-tdkb7mnq1eo3sbrrgaasps9nr4gsoqgg.apps.googleusercontent.com',
+    discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+    scope: 'https://www.googleapis.com/auth/spreadsheets'
+  }).then(function () {
+    // Google Sheets API is ready for use
+    sendDataToSheet();
+  });
+}
+
+// Function to send data to a separate sheet in Google Sheets
+function sendDataToSheet() {
+  const spreadsheetId = 'd/1RXIju8Q0_WSgYnhE7YQPxEvteyfjxkhQlvlcxEjTX8w'; // Replace with your Google Sheets spreadsheet ID
+  const range = 'stock values!A1'; // Specify the range where you want to write the data
+
+  // Prepare the data to be written to the sheet
+  const values = items.map(item => [item.id, item.name, item.price, item.stock]);
+
+  // Make request to Google Sheets API to update the spreadsheet
+  gapi.client.sheets.spreadsheets.values.update({
+    spreadsheetId: spreadsheetId,
+    range: range,
+    valueInputOption: 'RAW',
+    values: values
+  }).then(function(response) {
+    console.log('Data sent to Google Sheets:', response);
+  }, function(error) {
+    console.error('Error sending data to Google Sheets:', error);
+  });
+}
 
 items.forEach(item => {
     count[item.id] = 0;
@@ -82,9 +117,7 @@ function updateTotal() {
     document.getElementById('total-counter').innerHTML = total;
 }
 
-
-
-
+// Your existing code for toggling the cart
 function toggleCart() {
     let productInfo = '';
     items.forEach(item => {
