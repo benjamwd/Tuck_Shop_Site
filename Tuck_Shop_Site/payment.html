@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SumUp Card Widget</title>
+</head>
+<body>
+  <!-- Placeholder div for SumUp card widget -->
+  <div id="sumup-card"></div>
+
+  <!-- SumUp card widget SDK script -->
+  <script src="https://gateway.sumup.com/gateway/ecom/card/v2/sdk.js"></script>
+
+  <!-- JavaScript code to mount the SumUp card widget -->
+  <script type="text/javascript">
+    // Define a global variable to store the current total amount
+    var currentAmount = <?php echo $total_price; ?>;
+
+    // Function to update the checkout ID with the current amount
+    function updateCheckoutId() {
+      // Retrieve the checkout ID placeholder element
+      var checkoutIdElement = document.getElementById('sumup-card');
+
+      // Generate a new checkout ID based on the current amount
+      var newCheckoutId = '<?php echo $checkoutIdPrefix; ?>' + currentAmount;
+
+      // Update the checkout ID in the SumUp card widget
+      checkoutIdElement.setAttribute('checkoutId', newCheckoutId);
+    }
+
+    // Function to handle response from the SumUp card widget
+    function onResponse(type, body) {
+      // Log the type and body of the response to the console
+      console.log('Type', type);
+      console.log('Body', body);
+    }
+
+    // Mount the SumUp card widget initially
+    SumUpCard.mount({
+      // Specify the id of the placeholder div
+      id: 'sumup-card',
+      // Specify the initial checkout ID based on the current amount
+      checkoutId: '<?php echo $checkoutId; ?>',
+      // Specify the callback function to handle response
+      onResponse: onResponse,
+    });
+
+    // Call the updateCheckoutId function to update the checkout ID
+    updateCheckoutId();
+  </script>
+</body>
+</html>
+
+

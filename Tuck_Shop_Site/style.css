@@ -1,0 +1,136 @@
+body {
+  font-family: 'Futura', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #8E2DE2, #4A00E0, #00d4ff); /* Gradient from purple to blue */
+  color: #FFFFFF; /* Text color */
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: linear-gradient(to bottom, #031c56, #3f85ff); /* Dark to light blue gradient */
+  color: #FFFFFF; /* Text color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* White box shadow */
+  border: white solid 3px;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em; 
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.category-title-choc,
+.category-title-crisp,
+.category-title-other {
+  cursor: pointer;
+  font-size: 1.5em; /* Larger font size */
+  border-bottom: 2px solid white; /* White border */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.items {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent white border */
+  animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+.item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Semi-transparent white box shadow */
+  animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+.item-name {
+  flex: 1;
+  font-size: 1.2em; /* Larger font size */
+  margin-left: 20px;
+}
+
+.item-price {
+  flex: 0 0 80px;
+  text-align: right;
+  font-size: 1.2em; /* Larger font size */
+}
+
+.item-price::before {
+  content: "£";
+}
+
+.show {
+  display: block;
+}
+
+button {
+  font-weight: 700;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #3f85ff;
+  border: white 2px solid;
+  animation: fadeIn 1s ease; 
+  color: white;
+}
+
+#counter00000 {
+  animation: fadeIn 1s ease; 
+}
+
+#cart-btn {
+  padding: 15px;
+  text-align:  center;
+  font-size: 20px;
+  top: 10px; /* Adjust the distance from the top */
+  left: 20px; /* Adjust the distance from the right */
+}
+
+#cart-btn img {
+  width: 30px;
+  height:30px;
+  object-fit: contain;
+  background: none;
+}
+
+footer {
+  font-weight: 700;
+  font-size: 12px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.logo-container {
+  position: fixed; /* Fixed position to keep it fixed on the viewport */
+  top: 1px; /* Adjust the distance from the top */
+  right: 1px; /* Adjust the distance from the right */
+
+}
