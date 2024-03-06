@@ -42,6 +42,31 @@ const items = [
     {id: "00012", name: "Yoyo bear", price: 0.50, stock: 10},
 ];
 
+// Convert data to JSON string
+function downloadJSON() {
+    const jsonData = JSON.stringify(items, null, 2);
+
+    // Create a Blob containing the JSON data
+    const blob = new Blob([jsonData], { type: 'application/json' });
+
+    // Create a URL for the Blob
+    const url = URL.createObjectURL(blob);
+
+    // Create a link element and set its properties
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'data.json'; // Set the file name
+
+    // Simulate a click on the link to trigger the download
+    a.click();
+
+    // Revoke the URL to release the object associated with it
+    URL.revokeObjectURL(url);
+}
+
+// Call the function to download JSON when needed
+downloadJSON();
+
 // Initialize the API client library and set up sign-in state listeners
 function initClient() {
     gapi.client.init({
@@ -137,6 +162,4 @@ function toggleCart() {
     window.location.href = "basket.html";
 }
 
-
- 
 
