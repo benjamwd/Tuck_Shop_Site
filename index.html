@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Tuck Shop Menu</title>
+  <link rel="stylesheet" href="style.css"> <!-- Make sure this path is correct -->
+</head>
+<div class="logo-container">
+  <img src="images/Immanuel_College_logo-removebg-preview.png" alt="school logo" width="86" height="86">
+</div>
+<button id="cart-btn" onclick="toggleCart()">
+  <span id='total-counter'>0</span> <!-- This is the total number of items in the cart -->
+  <img src="images/basket.png" alt="cart">
+</button>
+<body>
+  <div class="menu-container">
+    <h1>School Tuck Shop Menu ;)
+    </h1>
+    <div class="category">
+      <h2 class="category-title-choc">Chocolate 🍫</h2>
+      <ul class="items">
+        
+        <li class="item"><img src="images/kitkat.jpg" alt="Kitkat"><span class="item-name">Kitkat</span>
+          <button id="item-btn00000">Add to Cart +</button>  <button id="item-btn-00000">-</button> <button id="item-btn-C00000">clear</button> 
+        <span id="counter00000">0</span><span 
+          class="item-price">0.50</span></li>
+        
+            
+        <li class="item"><img src="images/fredos.jpg" alt="Fredos"><span class="item-name">Freddo</span>
+          <button id="item-btn00001">Add to Cart +</button> <button id="item-btn-00001">-</button> <button id="item-btn-C00001">clear</button> 
+        <span id="counter00001">0</span>
+          <span class="item-price">0.50</span>
+        </li>
+        <li class="item"><img src="images/twirl.jpg" alt="Twirl"><span class="item-name">Twirl</span>
+          <button id="item-btn00002">Add to Cart +</button> <button id="item-btn-00002">-</button> <button id="item-btn-C00002">clear</button>
+        <span id="counter00002">0</span> <span class="item-price">0.50</span></li>
+       
+        <li class="item"><img src="images/kinder.jpg" alt="Kinder"><span class="item-name">Kinder</span>
+          <button id="item-btn00003">Add to Cart +</button> <button id="item-btn-00003">-</button> <button id="item-btn-C00003">clear</button>
+        <span id="counter00003">0</span><span class="item-price">0.50</span></li>
+        
+         
+        <li class="item"><img src="images/brunch_bar.jpg" alt="Brunch Bar"><span class="item-name">Brunch Bar</span>
+          <button id="item-btn00004">Add to Cart +</button> <button id="item-btn-00004">-</button> <button id="item-btn-C00004">clear</button>
+        <span id="counter00004">0</span><span class="item-price">0.50</span></li>
+        
+        
+        <li class="item"><img src="images/aeros.jpg" alt="Aeros"><span class="item-name">Aero</span>
+          <button id="item-btn00005">Add to Cart +</button> <button id="item-btn-00005">-</button> <button id="item-btn-C00005">clear</button>
+        <span id="counter00005">0</span> <span class="item-price">1.00</span></li>
+        
+        
+        <li class="item"><img src="images/smarties.jpg" alt="Smarties"><span class="item-name">Smarties</span><button id="item-btn00006">Add to Cart +</button> <button id="item-btn-00006">-</button> <button id="item-btn-C00006">clear</button>
+          <span id="counter00006">0</span> 
+          <span class="item-price">1.00</span></li>
+        <!-- Add more chocolate items here -->
+      </ul>
+    </div>
+    <div class="category">
+      <h2 class="category-title-crisp">Crisps 🥔</h2>
+      <ul class="items">
+        
+        <li class="item"><img src="images/bisli.jpg" alt="Bisli"><span class="item-name">Bissli</span>
+          <button id="item-btn00007">Add to Cart +</button>  <button id="item-btn-00007">-</button> <button id="item-btn-C00007">clear</button> 
+        <span id="counter00007">0</span> <span class="item-price">1.00</span></li>
+        
+        
+        <li class="item"><img src="images/walkers.jpg" alt="Walkers"><span class="item-name">Walkers</span>
+          <button id="item-btn00008">Add to Cart +</button>  <button id="item-btn-00008">-</button> <button id="item-btn-C00008">clear</button> 
+        <span id="counter00008">0</span> <span class="item-price">1.00</span></li>
+        
+    
+        <li class="item"><img src="images/sweet_popcorn.jpg" alt="Sweet and salted Popcorn"><span class="item-name">Sweet and salted Popcorn</span>
+          <button id="item-btn00009">Add to Cart +</button>  <button id="item-btn-00009">-</button> <button id="item-btn-C00009">clear</button> 
+        <span id="counter00009">0</span> <span class="item-price">0.50</span></li>
+      
+        <li class="item"><img src="images/salted_popcorn.jpg" alt="Salted Popcorn"><span class="item-name">Salted Popcorn</span>
+          <button id="item-btn00010">Add to Cart +</button>  <button id="item-btn-00010">-</button> <button id="item-btn-C00010">clear</button> 
+        <span id="counter00010">0</span> <span class="item-price">0.50</span></li>
+        <!-- Add more crisps items here -->
+      </ul>
+    </div>
+    <div class="category">
+      <h2 class="category-title-other">Other❓</h2>
+      <ul class="items"> 
+        <li class="item"><img src="images/nature_valley.jpg" alt="Nature Valley"><span class="item-name">Nature Valley</span>
+          <button id="item-btn00011">Add to Cart +</button>  <button id="item-btn-00011">-</button> <button id="item-btn-C00011">clear</button> 
+        <span id="counter00011">0</span><span class="item-price">0.50</span></li>
+        <li class="item"><img src="images/yoyo_bear.jpg" alt="Yoyo Bear"><span class="item-name">Yoyo Bear</span>
+          <button id="item-btn00012">Add to Cart +</button>  <button id="item-btn-00012">-</button> <button id="item-btn-C00012">clear</button> 
+        <span id="counter00012">0</span> <span class="item-price">0.50</span></li>
+       
+      </ul>
+    </div>
+  </div>
+
+  
+  <script src="script.js"></script> <!-- Make sure this path is correct -->
+</body>
+
+
+<footer>
+  <p>Contact: alevine@immanuelcollege.co.uk</p>
+  <p>For bug feedback: bespivak@immanuelcollege.co.uk OR dajosyfon@immanuelcollege.co.uk</p>
+  <p>© 2024 School Tuck Shop</p>
+  <p>All Rights Reserved</p>
+</html>
