@@ -8,6 +8,7 @@ let total = 0;
 let total_price = 0;
 let items = [];
 
+
 fetch(FULL_URL)
     .then(res => res.text())
     .then(rep => {
